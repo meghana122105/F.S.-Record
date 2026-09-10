@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>ANITS Campus Placement Portal</h1>
+        <h2>Student Registration</h2>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="companies.html">Companies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <h2 align="center">Student Registration Form</h2>
+
+        <form action="success.html">
+
+            <label>Full Name</label>
+            <input type="text" name="fullname"
+                placeholder="Enter Full Name"
+                required
+                minlength="3"
+                maxlength="50">
+
+            <label>Roll Number</label>
+            <input type="text"
+                name="roll"
+                placeholder="Enter Roll Number"
+                required>
+
+            <label>Branch</label>
+
+            <select required>
+
+                <option value="">Select Branch</option>
+
+                <option>CSE</option>
+
+                <option>AI & ML</option>
+
+                <option>Data Science</option>
+
+                <option>ECE</option>
+
+                <option>EEE</option>
+
+                <option>Mechanical</option>
+
+                <option>Civil</option>
+
+            </select>
+
+            <label>Gender</label>
+
+            <input type="radio" name="gender" required> Male
+
+            <input type="radio" name="gender"> Female
+
+            <input type="radio" name="gender"> Other
+
+            <br><br>
+
+            <label>Date of Birth</label>
+
+            <input type="date" required>
+
+            <label>Email</label>
+
+            <input type="email"
+                placeholder="example@gmail.com"
+                required>
+
+            <label>Mobile Number</label>
+
+            <input type="tel"
+                placeholder="10-digit Mobile Number"
+                pattern="[0-9]{10}"
+                required>
+
+            <label>Address</label>
+
+            <textarea rows="5"
+                placeholder="Enter Address"
+                required></textarea>
+
+            <label>Skills</label>
+
+            <input type="checkbox"> C Programming
+
+            <input type="checkbox"> Java
+
+            <input type="checkbox"> Python
+
+            <input type="checkbox"> HTML
+
+            <input type="checkbox"> CSS
+
+            <input type="checkbox"> JavaScript
+
+            <br><br>
+
+            <label>Resume Upload</label>
+
+            <input type="file">
+
+            <label>Password</label>
+
+            <input type="password"
+                placeholder="Create Password"
+                minlength="6"
+                required>
+
+            <label>Confirm Password</label>
+
+            <input type="password"
+                placeholder="Confirm Password"
+                minlength="6"
+                required>
+
+            <br><br>
+
+            <button type="submit">Register</button>
+
+            <button type="reset">Reset</button>
+
+        </form>
+
+    </main>
+
+    <footer>
+
+        <p>&copy; 2026 ANITS Campus Placement Portal</p>
+
+    </footer>
+
+</body>
+
+</html>
