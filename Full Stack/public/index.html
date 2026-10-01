@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Foodie - Online Food Ordering</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+        <h1>🍴 Foodie</h1>
+
+        <nav>
+            <a href="#menu">Menu</a>
+            <a href="#order">Order</a>
+        </nav>
+    </header>
+
+
+    <!-- Welcome Section -->
+
+    <section class="hero">
+
+        <h2>Online Food Ordering System</h2>
+
+        <p>
+            Order your favourite food quickly and easily!
+        </p>
+
+        <a href="#menu" class="btn">
+            View Menu
+        </a>
+
+    </section>
+
+
+    <!-- Menu -->
+
+    <section id="menu">
+
+        <h2>Our Menu</h2>
+
+        <div id="menu-container" class="menu-container">
+
+            <!-- Food items will appear here -->
+
+        </div>
+
+    </section>
+
+
+    <!-- Cart -->
+
+    <section id="cart">
+
+        <h2>🛒 Your Cart</h2>
+
+        <div id="cart-items">
+
+            <p>Your cart is empty.</p>
+
+        </div>
+
+        <h3>
+            Total: ₹<span id="cart-total">0</span>
+        </h3>
+
+    </section>
+
+
+    <!-- Order Form -->
+
+    <section id="order">
+
+        <h2>Place Your Order</h2>
+
+        <form id="order-form">
+
+            <label>
+                Customer Name
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label>
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Enter phone number"
+                required
+            >
+
+
+            <label>
+                Delivery Address
+            </label>
+
+            <textarea
+                id="address"
+                placeholder="Enter delivery address"
+                required
+            ></textarea>
+
+
+            <button type="submit">
+                Place Order
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Order Result -->
+
+    <section id="result">
+
+        <div id="message"></div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 Foodie Online Food Ordering System
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Foodie - Online Food Ordering</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <h1>🍴 Foodie</h1>
+
+        <nav>
+            <button onclick="showPage('home')">Home</button>
+            <button onclick="showPage('menu')">Menu</button>
+            <button onclick="showPage('cart')">
+                Cart 🛒
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="page active">
+
+        <div class="hero">
+
+            <h2>Delicious Food, Delivered Fast!</h2>
+
+            <p>
+                Order your favourite food from Foodie.
+            </p>
+
+            <button
+                class="main-button"
+                onclick="showPage('menu')">
+
+                View Menu
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MENU ================= -->
+
+    <section id="menu" class="page">
+
+        <h2>Our Menu</h2>
+
+        <div id="menu-container" class="menu-container">
+
+        </div>
+
+        <div class="bottom-button">
+
+            <button
+                class="main-button"
+                onclick="showPage('cart')">
+
+                View Cart 🛒
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CART ================= -->
+
+    <section id="cart" class="page">
+
+        <h2>Your Cart 🛒</h2>
+
+        <div id="cart-items">
+
+            <p>Your cart is empty.</p>
+
+        </div>
+
+        <div class="cart-total">
+
+            <h3>
+                Total: ₹<span id="cart-total">0</span>
+            </h3>
+
+        </div>
+
+        <div class="button-group">
+
+            <button
+                class="secondary-button"
+                onclick="showPage('menu')">
+
+                ← Continue Shopping
+
+            </button>
+
+            <button
+                class="main-button"
+                onclick="goToCheckout()">
+
+                Proceed to Checkout →
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CHECKOUT ================= -->
+
+    <section id="checkout" class="page">
+
+        <h2>Checkout</h2>
+
+        <form id="order-form">
+
+            <label>
+                Customer Name
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label>
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Enter your phone number"
+                required
+            >
+
+
+            <label>
+                Delivery Address
+            </label>
+
+            <textarea
+                id="address"
+                placeholder="Enter delivery address"
+                required
+            ></textarea>
+
+
+            <div class="checkout-total">
+
+                Total Amount:
+                ₹<span id="checkout-total">0</span>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="main-button">
+
+                Place Order
+
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- ================= ORDER CONFIRMATION ================= -->
+
+    <section id="confirmation" class="page">
+
+        <div class="confirmation-box">
+
+            <h2>🎉 Order Confirmed!</h2>
+
+            <div id="message">
+
+            </div>
+
+            <button
+                class="main-button"
+                onclick="showPage('home')">
+
+                Back to Home
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Foodie Online Food Ordering System
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
